@@ -1,0 +1,12 @@
+{
+    "wildberries": {
+        "answers": "settings/wbanswers.json",
+        "url": ""
+    },
+    "ozon": {
+        "answers": "settings/ozanswers.json",
+        "url": ""
+    },
+    "driver_folder": "chromeDriver/",
+    "database": "settings/comments"
+}
