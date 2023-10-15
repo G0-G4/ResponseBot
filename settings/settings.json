@@ -5,7 +5,7 @@
     "ozon": {
         "answers": "settings/ozanswers.json"
     },
-    "driver_folder": "chromeDriver/",
+    "driver_folder": "chromeDriver",
     "database": "settings/comments",
     "email": "",
     "key" : ""
