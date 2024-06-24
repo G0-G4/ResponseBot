@@ -2,9 +2,10 @@ main.exe ^
 --wildberries ^
 --void ^
 --apikey token ^
---file settings/wbanswers.json ^
 --probabilistic ^
+--file settings/prob.json ^
 --fromstar 4 ^
 --everyminutes 30 ^
---shortsleep 0.5
+--shortsleep 0.5 ^
+--brand brandname
 pause
