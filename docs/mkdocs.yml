@@ -6,15 +6,15 @@ repo_url: 'https://github.com/G0-G4/ResponseBot'
 theme: readthedocs
 nav:
   - About: index.md
-  - Параметры:
-    - Параметры: params.md
-    - Режимы генерации отзывов: generators.md
-    - Подстановка значений: substitute.md
-  - Использование программы:
-    - Начало работы: startfiles.md
-    - Структура файлов: structure.md
-    - Выгрузка куки файла: cookies.md
-    - Обновление: update.md
+  - Параметры: params.md
+  - Режимы генерации ответов: generators.md
+  - Подстановка значений: substitute.md
+  - Начало работы: startfiles.md
+  - Файл настроек: settings.md
+  - Структура файлов: structure.md
+  - Выгрузка куки файла: cookies.md
+  - Обновление: update.md
+  - FAQ: FAQ.md
 plugins:
   - search:
       enabled: true

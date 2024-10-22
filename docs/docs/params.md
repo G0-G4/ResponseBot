@@ -6,7 +6,7 @@
 - `--avito`, `-av` режим работы с avito
 - `--avitochat`, `-avc` режим работы с чатами авито
 - `--csv` сохранять отзывы и ответы в csv файл
-- `--sqlite` сохранять отзывы и ответы в db файл. Может быть открыт, например с помощью sqlitebrowser
+- `--sqlite` сохранять отзывы и ответы в db файл. Может быть открыт, например с помощью [sqlitebrowser](https://sqlitebrowser.org/)
 - `--void`  не сохранять отзывы и ответы
 - `--probabilistic` [составление отзыва из частей](generators.md#--probabilistic)
 - `--fromlist` [выбирает отзывы из списка.](generators.md#--fromlist)
