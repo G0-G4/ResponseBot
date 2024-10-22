@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Режимы генерации ответов - ResponseBot</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u0420\u0435\u0436\u0438\u043c\u044b \u0433\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u0438 \u043e\u0442\u0432\u0435\u0442\u043e\u0432";
+        var mkdocs_page_input_path = "generators.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> ResponseBot
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">About</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../params/">Параметры</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Режимы генерации ответов</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#-probabilistic">--probabilistic</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_2">алгоритм составления</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_3">шаблон файла</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#-fromlist">--fromlist</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_4">алгоритм составления</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_5">шаблон файла</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#-llm">--llm</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_6">алгоритм составления</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_7">шаблон файла</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../substitute/">Подстановка значений</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../startfiles/">Начало работы</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../settings/">Файл настроек</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../structure/">Структура файлов</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../cookies/">Выгрузка куки файла</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../update/">Обновление</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../FAQ/">FAQ</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">ResponseBot</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Режимы генерации ответов</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/G0-G4/ResponseBot/edit/master/docs/generators.md">Edit on G0-G4/ResponseBot</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="_1">Генераторы ответов</h1>
+<p>Доступно 3 режима генерации, для использования передается соответсвующий параметр.
+Файл передается через <code>--file</code></p>
+<p><a href="../substitute/">Подстановка имен пользователей и названия бренда</a></p>
+<p>В любом режиме можно заполнить список <code>stop_words</code>. Если слово из списка будет встречено в отзыве, то на него программа не ответит.</p>
+<h2 id="-probabilistic">--probabilistic</h2>
+<h3 id="_2">алгоритм составления</h3>
+<pre><code class="language-text">Если оценка больше или равна 4, то
+в 30% случаев к ответу будет добавлен один из шаблонов раздела с соответствующей оценкой.
+
+В остальных 70% случаях, если комментарий не пустой, то к ответу добавится один из шаблонов раздела 'gratitude'. Если пустой, то добавится один из шаблонов раздела 'gratitude no comment'.
+
+Дальше с вероятностью 0.5 совместно добавляются шаблоны из разделов 'main' и 'recommendations'.
+
+Если оценка равна 3 и у отзыва есть комментарий, то к ответу добавляется шаблон из раздела '3', если комментария нет, то добавляется шаблон из раздела '3 no comment'.
+
+Если оценка меньше 3 в 30% случаях добавляется шаблон из раздела с соответствующей оценкой. В остальных случаях шаблон выбирается из раздела 'apologies'. Если отзыв не пустой, то к нему также добавляется шаблон из раздела 'examination'.
+
+В конце ко всем ответам добавляется шаблон из раздела 'goodbye'.
+</code></pre>
+<h3 id="_3">шаблон файла</h3>
+<pre><code class="language-json">{
+    &quot;greetings&quot;: [
+        &quot;Здравствуйте, $name$!&quot;,
+        &quot;Добрый день!&quot;
+    ],
+
+    &quot;gratitude&quot;:[
+        &quot;Спасибо, что выбрали нашу продукцию!&quot;,
+        &quot;Мы рады, что Вы обратили внимание на нашу продукцию!&quot;,
+    ],
+
+    &quot;gratitude no comment&quot;:[
+        &quot;Спасибо, что выбрали нашу продукцию!&quot;,
+        &quot;Мы рады, что Вы обратили внимание на нашу продукцию!&quot;,
+    ],
+
+    &quot;apologies&quot;:[
+        &quot;Нам жаль, что мы не смогли оправдать Ваши ожидания.&quot;,
+        &quot;Нам очень жаль.&quot;,
+    ],
+
+    &quot;examination&quot;:[
+        &quot;Мы разберемся с данным вопросом.&quot;,
+        &quot;Мы обязательно разберемся с данным вопросом.&quot;,
+    ],
+
+    &quot;main&quot;: [
+        &quot;Нам будет приятно видеть Вас в числе наших постоянных покупателей.&quot;,
+    ],
+
+    &quot;recommendations&quot;: [
+        &quot;Обратите внимание на другие наши товары.&quot;,
+    ],
+
+    &quot;goodbye&quot;:[
+        &quot;С уважением, представитель $brand$.&quot;,
+    ],
+
+    &quot;5&quot; : [
+        &quot;Спасибо за Ваши 5 звездочек!&quot;
+    ],
+
+    &quot;4&quot; : [
+        &quot;Спасибо за Ваши 4 звездочки!&quot;
+    ],
+
+    &quot;3&quot; : [
+        &quot;Cпасибо за отзыв.&quot;,
+    ],
+
+    &quot;3 no comment&quot; : [
+        &quot;Cпасибо за оценку.&quot;,
+    ],
+
+    &quot;2&quot; : [
+        &quot;Нам жаль, что Вы оценили наш продукт всего на 2 звездочки.&quot;
+    ],
+
+    &quot;1&quot; : [
+        &quot;Нам жаль, что Вы оценили наш продукт всего на 1 звездочку.&quot;
+    ],
+
+    &quot;0&quot; : [
+        &quot;Нам жаль, что мы Вас разочаровали.&quot;
+    ],
+
+    &quot;stop_words&quot; : [
+
+    ]
+}
+</code></pre>
+<h2 id="-fromlist">--fromlist</h2>
+<h3 id="_4">алгоритм составления</h3>
+<p>В качестве отзыва берется отзыв из соответствующего списка.
+В файле две группы списков: обычные (normal) и отмененные (canceled).</p>
+<p>Отзывы делятся на обычные и отмененные только для ozon.
+Программа может быть настроена на пропуск одного или другого вида отзывов через параметры <code>--skipnormal</code> и <code>--skipcanceled</code></p>
+<h3 id="_5">шаблон файла</h3>
+<pre><code class="language-json">{
+    &quot;normal&quot;: {
+        &quot;5&quot;: [
+            &quot;answer for 5&quot;
+        ],
+        &quot;4&quot;: [
+            &quot;answer for 4&quot;
+        ],
+        &quot;3&quot;: [
+            &quot;answer for 3&quot;
+        ],
+        &quot;2&quot;: [
+            &quot;answer for 2&quot;
+        ], 
+        &quot;1&quot;: [
+            &quot;answer for 1&quot;
+        ]
+    },
+    &quot;canceled&quot;: {
+        &quot;5&quot;: [
+            &quot;answer for 5 canceled&quot;
+        ],
+        &quot;4&quot;: [
+            &quot;answer for 4 canceled&quot;
+        ],
+        &quot;3&quot;: [
+            &quot;answer for 3 canceled&quot;
+        ],
+        &quot;2&quot;: [
+            &quot;answer for 2 canceled&quot;
+        ],
+        &quot;1&quot;: [
+            &quot;answer for 1 canceled&quot;
+        ]
+    },
+
+    &quot;stop_words&quot; : [
+    ]
+}
+</code></pre>
+<h2 id="-llm">--llm</h2>
+<h3 id="_6">алгоритм составления</h3>
+<p>Для составления ответов будет использоваться API GigaChat.
+Для доступа к нему необходимо зарегистрироваться на <a href="https://developers.sber.ru/studio/registration">сайте</a> и сгенерировать Client Secret.
+Его необходимо будет вставить в файл с шаблоном.
+Пример файла с шаблоном ниже. В нем можно задать инструкцию, как нейросети отвечать на отзывы.</p>
+<h3 id="_7">шаблон файла</h3>
+<pre><code class="language-json">{
+    &quot;system&quot; : &quot;Ты менеджер маркетплейсов. Твоя задача отвечать на отзывы на товары. Отзывы будут в таком формате:\nstar = оценка товара\ncomment = комментарий пользователя, может быть пустым\nname = название товара\nclient_name = имя пользователя. Может быть пустым или чем-то вроде 'пользователь предпочёл скрыть свои данные'\n\nЕсли указано имя пользователя, то к нему можно обратиться по имени.\nЕсли комментарий пустой, то давай краткий ответ!&quot;,
+    &quot;credentials&quot; : &quot;&lt;credentials&gt;&quot;,
+    &quot;stop_words&quot; : [
+    ]
+}
+</code></pre>
+<p>За использование GigaChat может взиматься дополнительная плата.</p>
+<ul>
+<li><a href="https://developers.sber.ru/portal/products/gigachat">официальный сайт GigaChat</a></li>
+<li><a href="https://courses.sberuniversity.ru/llm-gigachat/">курс по промптингу</a></li>
+<li><a href="https://developers.sber.ru/docs/ru/gigachat/api/tariffs">тарифы GigaChat</a></li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../params/" class="btn btn-neutral float-left" title="Параметры"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../substitute/" class="btn btn-neutral float-right" title="Подстановка значений">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/G0-G4/ResponseBot" class="fa fa-code-fork" style="color: #fcfcfc"> G0-G4/ResponseBot</a>
+        </span>
+    
+    
+      <span><a href="../params/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../substitute/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
