@@ -1,0 +1,9 @@
+[Unit]
+Description=auto answering on marketplace responses
+
+[Timer]
+OnCalendar=*-*-* *:00:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

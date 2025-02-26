@@ -189,3 +189,15 @@ options:
 При удачном обновлении старую версию можно удалить или оставить для возможности отката.
 
 История версий доступна по [адресу](https://github.com/G0-G4/ResponseBot/releases)
+
+## запуск по расписанию через systemd
+1. для каждого скрипта запуска создать файлы `/etc/systemd/system/responder.service` `/etc/systemd/system/responder.timer`. Пример в scripts
+2. `sudo systemctl daemon-reload`
+3. `sudo systemctl enable responder.timer`
+4. `sudo systemctl disable responder.service`
+
+- `sudo journalctl -fu responder.service` - просмотр журнала в режиме реального времени
+- `sudo systemctl status responder.service` `sudo systemctl status responder.timer` - статус сервиса и таймера
+
+В один из скриптов запуска можно добавить строку для очистки логов
+`find ./logs -type f -mtime +7 -delete && ./main ...` - удаление файлов старше 7 дней

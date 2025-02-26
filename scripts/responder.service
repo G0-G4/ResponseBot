@@ -1,0 +1,14 @@
+[Unit]
+Description=auto answering on marketplace responses
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=<path to shell script>
+WorkingDirectory=<path to working dir>
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
